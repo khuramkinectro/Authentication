@@ -1,0 +1,2 @@
+1) for initilized your app
+2) show we have a folder views for handel view
