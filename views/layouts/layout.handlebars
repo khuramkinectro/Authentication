@@ -3,9 +3,10 @@
 
 <head>
     <title>LoginApp</title>
+
     <link rel="stylesheet" href="/css/bootstrap.css" />
     <link rel="stylesheet" href="/css/style.css" />
-
+    <link rel="stylesheet" href="/css/style2.css">
 </head>
 
 <body>
@@ -14,12 +15,25 @@
             <nav>
                 <ul class="nav nav-pills pull-right">
                     {{#if user}}
-                    <li role="presentation"><a href="/">DashBoard</a></li>
-                    <li role="presentation"><a href="/users/logout">Logout</a></li>
+                    <span class="headerDesign">
+                        <li role="presentation">
+                            <h3>{{user.username}}</h3>
+                        </li>
+                        <li role="presentation"><a href="/">DashBoard</a></li>
+                        <li role="presentation"><a href="/logout">Logout</a></li>
+                        <li role="presentation"><a href="/post/createpost">Create Post</a></li>
+                        <li role="presentation"><a href="/register">View You Post</a></li>
+                        <li role="presentation"><a href="/register">View all Post</a></li>
+                    </span>
                     {{else}}
-                    <li role="presentation"><a href="/users/login">Login</a></li>
-                    <li role="presentation"><a href="/users/register">Register</a></li>}}
+                    <li role="presentation"><a href="/login">Login</a></li>
+                    <li role="presentation"><a href="/register">Register</a></li>
                     {{/if}}
+
+
+
+
+
                 </ul>
             </nav>
             <h3 class="text-muted">LoginApp</h3>
@@ -40,10 +54,7 @@
                 {{#if error}}
                 <div class="alert alert-danger">{{errro}}</div>
                 {{/if}}
-
-
                 {{{body}}}
-
             </div>
         </div>
         <footer class="footer">

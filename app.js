@@ -15,9 +15,14 @@ mongoose.connect("mongodb://localhost/loginapp");
 var db = mongoose.connection;
 
 //var routes = require();
-var routes = require("./routes/index");
-var users = require("./routes/users");
+var admin = require("./routes/admin");
 
+var routes = require("./routes/index");
+//var users = require("./routes/users");
+var posts = require("./routes/post");
+var register = require("./routes/Authentication/register");
+var login = require("./routes/Authentication/login");
+var logout = require("./routes/Authentication/logout");
 //Initialize You app
 var app = express(); //1
 
@@ -69,20 +74,31 @@ app.use(
 app.use(flash());
 //global variables for flash msg
 app.use(function(req, res, next) {
-  res.locals.success_msg - req.flash("success_msg");
+  res.locals.success_msg = req.flash("success_msg");
   res.locals.error_msg = req.flash("error_msg");
   res.locals.error = req.flash("error");
   res.locals.user = req.user || null;
+  res.locals.admin = req.admin || null;
+  res.locals.posts = req.postby || null;
+  // console.log("req.admin  " + req.user);
+  // console.log("res.locals.admin  " + res.locals.user);
 
   // passport set his own flash msg we set to error veriable
   next();
 });
 
 app.use("/", routes);
-app.use("/users", users);
+//app.use("/users", users);
+app.use("/", admin);
+app.use("/post", posts);
+app.use("/", register);
+app.use("/", login);
+app.use("/", logout);
+// for admin
+//app.use("/admin", users);
 
 //set port
-app.set("port", process.env.PORT || 3000);
+app.set("port", process.env.PORT || 8000);
 app.listen(app.get("port"), function() {
   console.log("server started on port" + app.get("port"));
 });

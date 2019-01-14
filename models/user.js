@@ -1,24 +1,34 @@
 var mongoose = require("mongoose");
 var bcrypt = require("bcryptjs");
-
+var Schema = mongoose.Schema;
+var mongooseUniqueValidator = require("mongoose-unique-validator");
 //User Schema
-var UserSchema = mongoose.Schema({
+var UserSchema = new Schema({
   username: {
-    type: String
+    // define usernam unique
+    type: String,
+    require: true,
+    unique: true
   },
   password: {
-    type: String
+    type: String,
+    require: true
   },
   email: {
-    type: String
+    type: String,
+    require: true,
+    unique: true
   },
   name: {
     type: String
-  }
+  },
+  isAdmin: { type: Boolean, default: false },
+  role: { type: String, default: "" },
+  posts: [{ type: mongoose.Schema.Types.ObjectId, ref: "AllPost" }]
 });
+UserSchema.plugin(mongooseUniqueValidator);
 // we create ver User for access these out fo this file //User is model name (1st parameter)
 var User = (module.exports = mongoose.model("User", UserSchema));
-
 // all User related function down here
 
 module.exports.createUser = (newUser, callback) => {
