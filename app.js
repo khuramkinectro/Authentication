@@ -19,10 +19,18 @@ var admin = require("./routes/admin");
 
 var routes = require("./routes/index");
 //var users = require("./routes/users");
-var posts = require("./routes/post");
+
 var register = require("./routes/Authentication/register");
 var login = require("./routes/Authentication/login");
 var logout = require("./routes/Authentication/logout");
+//var posts = require("./routes/post");
+
+var createPost = require("./routes/Post/createPost");
+var yourPost = require("./routes/Post/yourPost");
+var allPost = require("./routes/Post/allPost");
+var deletePost = require("./routes/Post/deletePost");
+var updatePost = require("./routes/Post/updatePost");
+
 //Initialize You app
 var app = express(); //1
 
@@ -79,7 +87,7 @@ app.use(function(req, res, next) {
   res.locals.error = req.flash("error");
   res.locals.user = req.user || null;
   res.locals.admin = req.admin || null;
-  res.locals.posts = req.postby || null;
+  res.locals.posts = req.posts || null;
   // console.log("req.admin  " + req.user);
   // console.log("res.locals.admin  " + res.locals.user);
 
@@ -90,10 +98,18 @@ app.use(function(req, res, next) {
 app.use("/", routes);
 //app.use("/users", users);
 app.use("/", admin);
-app.use("/post", posts);
 app.use("/", register);
 app.use("/", login);
 app.use("/", logout);
+
+app.use("/post", createPost);
+app.use("/post", yourPost);
+app.use("/post", allPost);
+app.use("/post", deletePost);
+app.use("/post", updatePost);
+
+//youpost; allpost deletepost updatepost
+
 // for admin
 //app.use("/admin", users);
 

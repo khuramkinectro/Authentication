@@ -1,38 +1,3 @@
-<section class="get">
-    <h3>{{user.username}}</h3>
-    <a href="/post/getoneUserPost"><b>{{user.username}}</b> Get your POST</a>
-    <div>
-        <div class="input">
-            <label for="id">Delete</label>
-            <input type="text" id="id" name="id">
-        </div>
-        {{!-- <button class="btn btn-success btn-sm" type="submit">Find Post</button> --}}
-        <br>
-        {{# each items }}
-        <article class="item">
-            <div>Post Title: {{ this.postTitle }}</div>
-            <div> <b>Post Id: {{ this._id }}</b></div>
-            <div>Post Content: {{ this.writepost }}</div>
-            <div>Register User ID: {{Userid}}</div>
-            <div><b>Posted By: {{Username}}</b></div>
-            {{!-- <div class="input">
-                <label for="id">ID</label>
-                <input type="text" id="id" name="id">
-            </div> --}}deletePost
-
-            <form action="/post/deletePost" method="post">
-                <button class="btn btn-danger btn-sm" type="submit">Delete Post</button>
-            </form>
-            {{!-- <form action="/post/updatePost" method="post">
-                <button class="btn btn-success btn-sm" type="submit">Update</button>
-            </form> --}}
-            <br>
-        </article>
-        <br>
-        {{/each}}
-    </div>
-    {{!-- <button type="submit">Find</button> --}}
-</section>
 {{!-- <section class="delete">
     <h3>Delete Data</h3>
     <form action="post/deletePost" method="post">

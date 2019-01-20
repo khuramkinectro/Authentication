@@ -2,8 +2,8 @@ var mongoose = require("mongoose");
 var Schema = mongoose.Schema;
 
 var PostSchema = new Schema({
-  postTitle: { type: String, required: true },
-  writepost: { type: String, required: true },
+  postTitle: { type: String },
+  writepost: { type: String },
   Userid: { type: Schema.Types.ObjectId, ref: "User" },
   Username: { type: String }
 });

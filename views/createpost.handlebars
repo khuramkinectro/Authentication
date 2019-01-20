@@ -1,10 +1,12 @@
-<form action="/createpost" method="post">
+<form action="/post/postcreated" method="post">
+    <input type="hidden" name="_id" value="{{mypost._id}}">
     <div class="form-group">
         <label for="title">Post Title </label>
-        <input type="text" class="form-control" id="postTitle" name="postTitle">
+        <input type="text" class="form-control" id="postTitle" name="postTitle" value="{{mypost.postTitle}}">
     </div>
+
     <div class="form-group">
-        <textarea class="form-control" id="writepost" name="writepost" rows="10"></textarea>
+        <input class="form-control" id="writepost" name="writepost" rows="10" value="{{mypost.writepost}}"></input>
     </div>
-    <button class="btn btn-success" type="submit">INSERT</button>
+    <button class="btn btn-success" type="submit">SUBMIT</button>
 </form>

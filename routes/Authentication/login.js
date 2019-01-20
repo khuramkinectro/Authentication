@@ -10,27 +10,28 @@ router.get("/login", function(req, res) {
   res.render("login");
   console.log("login");
 });
-router.get("/post", function(req, res) {
-  res.redirect("/post");
-  res.render("viewAllPost");
+router.get("/allPost", function(req, res) {
+  res.redirect("/allPost");
+  res.render("allPost");
 });
 
 router.post(
   "/login",
   passport.authenticate("local", {
-    successRedirect: "/post",
+    successRedirect: "/allPost",
     failureRedirect: "/login",
     failureFlash: true
   }),
   function(req, res) {
+    console.log("fun called");
+
     if ((newUser.isAdmin = true)) {
       console.log("adminloginnn");
-      //res.redirect("/");
+      res.redirect("/");
     } else {
       res.redirect("index");
-      // res.render("admin");
+      res.render("admin");
       res.render("index");
-
       console.log("user loginnnn");
       console.log("res  " + res);
       console.log("req  " + req);

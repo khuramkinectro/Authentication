@@ -39,6 +39,8 @@ router.post("/register", function(req, res) {
     });
     if (req.body.adminCode === "sceretcode123") {
       newUser.isAdmin = true;
+    } else {
+      newUser.isAdmin = false;
     }
     // call back for create user in model
     User.createUser(newUser, function(err, user) {

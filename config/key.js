@@ -1,5 +1,9 @@
 module.exports = {
   Userid: "",
   _id: "",
-  user: ""
+  user: "",
+  title: "",
+  description: "",
+  post: "",
+  isAdmin: "true"
 };

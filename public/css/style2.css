@@ -2,13 +2,99 @@ body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
+html,
+body {
+  margin: 0%;
+  padding: 0;
+  width: 100%;
+}
+header {
+  width: 90%;
+  height: 13vh;
+}
+.logo {
+  position: fixed;
+  float: left;
+  margin: 16px 36px;
+  color: rgb(245, 245, 245);
+  font-weight: bold;
+  font-size: 30px;
+  padding: 12px;
+}
+nav {
+  position: fixed;
+  width: 100%;
+  z-index: 10;
+}
+nav ul {
+  list-style: none;
+  background: rgba(0, 0, 0, 0);
+  overflow: hidden;
+  color: #fff;
+  padding: 0;
+  text-align: center;
+  margin: 10;
+  transition: 1s;
+  margin-top: -2.6%;
+}
+nav.black ul {
+  background: #000;
+}
+nav ul li {
+  display: inline-block;
+  padding: 0px;
+}
+nav ul li a {
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  font-size: 20px;
+}
+nav ul li b {
+  margin: 600%;
+}
+
+.menu-icon {
+  width: 100%;
+  background: #000;
+  text-align: right;
+  box-sizing: border-box;
+  padding: 15px 24px;
+  cursor: pointer;
+  color: #fff;
+  display: none;
+}
+@media (max-width: 1600px) {
+  .logo {
+    position: fixed;
+    top: 0;
+    margin-top: 16px;
+  }
+  nav ul {
+    max-height: 40px;
+    background: #000;
+  }
+  nav.black ul {
+    background: #000;
+  }
+  .showing {
+    max-height: 120em;
+  }
+  nav ul li {
+    padding: 1px 5px;
+    text-align: center;
+  }
+  .menu-icon {
+    display: block;
+  }
+}
+
 a {
   color: #00b7ff;
 }
 
 section {
   float: left;
-  background: #bdc3c7;
+  background: #c7c2bd;
   padding: 10px;
   margin: 30px;
   width: 300px;

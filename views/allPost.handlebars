@@ -1,0 +1,87 @@
+{{# each myitems }}
+<div class="card" style="width: 70rem">
+
+    <div class=" card text-white bg-dark" style="width: 70rem">
+        <div class="card-body">
+            <h3 class="card-title">{{this.postTitle}}</h3>
+            <p class="card-text">{{this.writepost}}</p>
+            <p class="post-meta">Posted by
+                {{Username}}
+                on July 8, 2018
+            </p>
+        </div>
+    </div>
+</div>
+<br>
+{{/each}}
+
+{{!-- <form action="/post/createpost" method="get">
+    <button class=" btn-sm btn-success" type="submit">Create new Post</button>
+</form>
+<form action="/post/getYourPosts" method="get">
+    <button class=" btn-sm btn-success" type="submit">Get Your Post</button>
+</form> --}}
+{{!-- {{# each myitems }}
+<tr class="item">
+    <div class="post-preview">
+        <a href="/post/postGot">
+            <h2 class="post-title">
+                {{this.postTitle}}
+            </h2>
+        </a>
+        <p>{{this.writepost}}</p>
+        <p class="post-subtitle">
+            {{this._id}}
+        </p>
+        <p class="post-meta">Posted by
+            <a href="#">{{Username}}</a>
+            on July 8, 2018
+        </p>
+
+    </div>
+
+</tr>
+{{/each}}
+--}}
+
+
+
+
+
+{{!-- <table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Post Title</th>
+            <th>PostedBY</th>
+            <th>Post Descripition</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        {{# each myitems }}
+        <tr class="item">
+            <td>{{this.postTitle}}</td>
+            <td>{{Username}}</td>
+            <td>{{this.writepost}}</td>
+
+        </tr>
+        {{/each}}
+    </tbody>
+</table> --}}
+{{!-- <section class="get">
+    <h3>Get All Posts</h3>
+    <a href="/post/getPosts">Get All Posts</a>
+    <div>
+        <br>
+        {{# each myitems }}
+        <article class="myitem">
+            <div>Post Title: {{ this.postTitle }}</div>
+            <div>Post Content: {{ this.writepost }}</div>
+            <div><b>Posted By: {{Username}}</b></div>
+
+            <br>
+        </article>
+        <br>
+        {{/each}}
+    </div>
+</section> --}}

@@ -1,67 +1,76 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
 
 <head>
-    <title>LoginApp</title>
-
+    <title>My Blog</title>
     <link rel="stylesheet" href="/css/bootstrap.css" />
     <link rel="stylesheet" href="/css/style.css" />
-    <link rel="stylesheet" href="/css/style2.css">
+    <link rel="stylesheet" href="/css/style2.css" />
+    <link href="/css/clean-blog.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
-    <div class="container">
-        <div class="header clearfix">
+    <div class="wrapper">
+        <header>
             <nav>
-                <ul class="nav nav-pills pull-right">
-                    {{#if user}}
-                    <span class="headerDesign">
-                        <li role="presentation">
-                            <h3>{{user.username}}</h3>
+                <div class="menu-icon">
+                    <i class="fa fa-bars fa-2x"></i>
+                </div>
+                <div class="logo">
+                    MYBLOG
+                </div>
+                <div class="menu">
+                    <ul>
+                        {{#if user}}
+                        {{#if user.isAdmin}}
+                        <li><a href="/logout">Logout</a>
+                        <li><a href="/post/adminGetAllPosts">Get All Posts</a></li>
+                        <li><b>{{user.username}}</b></li>
+                        {{else}}
+                        <li><a href="/post/createpost">Create Post</a></li>
+                        <li><a href="/post/getPosts">Get All Posts</a></li>
+                        <li><a href="/post/postGot">Get Your Post</a></li>
+                        <li><a href="/logout">Logout</a>
+                        <li><b>{{user.username}}</b></li>
+                        {{/if}}
+                        {{/if}}
                         </li>
-                        <li role="presentation"><a href="/">DashBoard</a></li>
-                        <li role="presentation"><a href="/logout">Logout</a></li>
-                        <li role="presentation"><a href="/post/createpost">Create Post</a></li>
-                        <li role="presentation"><a href="/register">View You Post</a></li>
-                        <li role="presentation"><a href="/register">View all Post</a></li>
-                    </span>
-                    {{else}}
-                    <li role="presentation"><a href="/login">Login</a></li>
-                    <li role="presentation"><a href="/register">Register</a></li>
-                    {{/if}}
-
-
-
-
-
-                </ul>
+                    </ul>
+                </div>
             </nav>
-            <h3 class="text-muted">LoginApp</h3>
-        </div>
+        </header>
+        <div class="container">
 
 
-        <div class="row">
-            <div class="col-lg-12">
 
-                {{#if success_msg}}
-                <div class="alert alert-success">{{success_msg}}</div>
-                {{/if}}
-
-                {{#if error_msg}}
-                <div class="alert alert-danger">{{error_msg}}</div>
-                {{/if}}
-
-                {{#if error}}
-                <div class="alert alert-danger">{{errro}}</div>
-                {{/if}}
-                {{{body}}}
+            <div class="row">
+                <div class="col-lg-8">
+                    {{{body}}}
+                </div>
             </div>
-        </div>
-        <footer class="footer">
-            <p>&copy; 2019 LoginApp, Inc.</p>
-        </footer>
 
-    </div> <!-- /container -->
+        </div>
+    </div>
+
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $(".menu-icon").on("click", function () {
+                $("nav ul").toggleClass("showing");
+            });
+        });
+        $(window).on("scroll", function () {
+            if ($(window).scrollTop()) {
+                $('nav').addClass('black');
+            }
+            else {
+                $('nav').removeClass('black');
+            }
+        })
+    </script>
+
+
 </body>
 
 </html>

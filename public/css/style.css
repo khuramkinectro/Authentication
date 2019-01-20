@@ -3,7 +3,80 @@ body {
   padding-top: 20px;
   padding-bottom: 20px;
 }
-
+.card {
+  opacity: 0.8;
+}
+body {
+  content: "";
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  background-image: url("../img/images.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  -webkit-background-size: cover;
+  background-size: cover;
+}
+.contact-form {
+  position: fixed;
+  width: 700px;
+  height: 720px;
+  padding: 80px 40px;
+  background: rgba(0, 0, 0, 0.6);
+  left: 56.5%;
+  top: 8.8%;
+}
+.contact-form a {
+  color: #fff;
+  margin: 90%;
+}
+.avatar {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  overflow: hidden;
+  top: 2%;
+  left: 77%;
+}
+.contact-form h2 {
+  margin: 0;
+  text-align: center;
+  padding: 0 0 20px;
+  color: rgb(255, 255, 255);
+  text-transform: uppercase;
+}
+.contact-form input {
+  width: 100%;
+  margin-bottom: 10px;
+}
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form input[type="password"] {
+  border: none;
+  border-bottom: 1px solid#fff;
+  background: transparent;
+  outline: none;
+  height: 35px;
+  color: #fff;
+  font-size: 15px;
+}
+.contact-form button[type="submit"] {
+  height: 40px;
+  width: 100px;
+  color: rgb(0, 0, 0);
+  font-size: 15px;
+  background: rgb(209, 209, 209);
+  cursor: progress;
+  border: none;
+  outline: none;
+  margin-top: 1%;
+  margin-left: 4%;
+  margin-bottom: 15px;
+}
+.contact-form label {
+  color: rgb(255, 255, 255);
+}
 /* Everything but the jumbotron gets side spacing for mobile first views */
 .header,
 .marketing,
@@ -14,29 +87,22 @@ body {
 
 /* Custom page header */
 .header {
-  padding-bottom: 20px;
-  border-bottom: 1px solid #e5e5e5;
+  padding-bottom: 10px;
 }
 /* Make the masthead heading the same height as the navigation */
 .header h3 {
-  margin-top: 0;
-  margin-bottom: 0;
-  line-height: 40px;
+  padding-left: -20%;
 }
 
 /* Custom page footer */
 .footer {
-  padding-top: 19px;
+  padding-top: 3px;
   color: #777;
-  border-top: 1px solid #e5e5e5;
+  border-top: 1px solid #000000;
 }
 
 /* Customize container */
-@media (min-width: 768px) {
-  .container {
-    max-width: 730px;
-  }
-}
+
 .container-narrow > hr {
   margin: 30px 0;
 }
@@ -70,7 +136,8 @@ body {
   }
   /* Space out the masthead */
   .header {
-    margin-bottom: 30px;
+    margin-bottom: 40px;
+    padding-bottom: 20px;
   }
   /* Remove the bottom border on the jumbotron for visual effect */
   .jumbotron {
@@ -81,5 +148,5 @@ body {
   margin-top: 0;
 }
 footer {
-  margin-top: 40px;
+  margin-top: 49%;
 }

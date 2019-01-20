@@ -1,0 +1,136 @@
+{{# each items }}
+<div class="card text-white bg-dark" style="width: 70rem;">
+    <div class="card-body">
+        <h3 class="card-title">{{this.postTitle}}</h3>
+        <p class="card-text">{{this.writepost}}</p>
+        <p class="post-meta">Posted by
+            {{Username}}
+            on July 8, 2018
+        </p>
+        {{!-- <p class="post-meta">Post ID :
+            {{this._id}}
+
+        </p>
+        <p class="post-meta">Register ID:
+            {{Userid}}
+
+        </p> --}}
+        <form action="/post/postcreated/{{this._id}}" method="get">
+            <button class="btn btn-primary" type="submit">Edit</button>
+        </form>
+        <form action="/post/deletePost/{{this._id}}" method="post">
+            <button class="btn btn-danger btn-sm" id="this._id" type=" submit">Delete</button>
+        </form>
+    </div>
+</div>
+<br>
+{{/each}}
+
+
+
+
+
+
+
+
+{{!-- {{# each items }}
+<tr class="item">
+    <div class="post-preview">
+        <h2 class="post-title">
+            {{this.postTitle}}
+
+            <i class="fa fa-pencil fa-sm" aria-hidden="true"></i>
+            <i class="fa fa-trash fa-sm" aria-hidden="true"></i>
+
+        </h2>
+
+
+
+        <p>{{this.writepost}}</p>
+        <p class="post-subtitle">
+            {{this._id}}
+        </p>
+        <p class="post-meta">Posted by
+            <a href="#">{{Username}}</a>
+            on July 8, 2018
+
+        </p>
+        <form action="/post/deletePost/{{this._id}}" method="post">
+            <button class="btn btn-danger btn-sm" id="this._id" type=" submit">Delete
+            </button>
+        </form>
+        <form action="/post/postcreated/{{this._id}}" method="get">
+            <button class="btn btn-danger btn-sm" type="submit">Edit</button>
+        </form>
+    </div>
+
+</tr>
+{{/each}} --}}
+
+
+{{!-- <table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Post Id</th>
+            <th>Reg Id</th>
+            <th>Post Title</th>
+            <th>PostedBY</th>
+            <th>Post Descripition</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{# each items }}
+        <tr class="item">
+            <td>{{this._id}}</td>
+            <td>{{Userid}}</td>
+            <td>{{this.postTitle}}</td>
+            <td>{{Username}}</td>
+            <td>{{this.writepost}}
+                <form action="/post/deletePost/{{this._id}}" method="post">
+                    <button class="btn btn-danger btn-sm" id="this._id" type=" submit">Delete
+                    </button>
+                </form>
+                <form action="/post/postcreated/{{this._id}}" method="get">
+                    <button class="btn btn-danger btn-sm" type="submit">Edit</button>
+                </form>
+            </td>
+
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
+
+--}}
+
+
+
+{{!-- <section class="get">
+    <h3>{{user.username}}</h3>
+    <a href="/post/postGot"><b>{{user.username}}</b> Get your POST</a>
+    <div>
+        <br>
+        {{# each items }}
+        <article class="item">
+            <div>Post Title: {{ this.postTitle }}</div>
+            <div> <b>Post Id: {{ this._id }}</b></div>
+            <div>Post Content: {{ this.writepost }}</div>
+            <div>Register User ID: {{Userid}}</div>
+            <div><b>Posted By: {{Username}}</b></div>
+
+            <form action="/post/deletePost/{{this._id}}" method="post">
+                <button class="btn btn-danger btn-sm" id="this._id" type=" submit">Delete
+                    Post</button>
+            </form>
+
+
+
+            <form action="/post/postcreated/{{this._id}}" method="get">
+                <button class="btn btn-danger btn-sm" type="submit">Edit</button>
+            </form>
+
+            <br>
+        </article>
+        <br>
+        {{/each}}
+    </div>
+</section> --}}
